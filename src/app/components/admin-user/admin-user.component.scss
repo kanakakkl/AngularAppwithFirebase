@@ -1,0 +1,208 @@
+
+table tr.active td {
+    background-color:#d9ebff !important;
+  }
+  
+table
+{
+    border-bottom: 0.5px solid grey;
+}
+
+thead
+{
+    background-color:#d8e0ea;
+
+}
+th
+{
+    border-right: 1px solid grey;
+    font-size: 16px;
+    color: #000000;
+    font-weight: 600;    
+}
+tr
+{
+    border-bottom: 1px solid gray;
+}
+td{
+    border-right: 1px solid grey;
+    color: #000000;
+    font-weight: 600;
+}
+.thh
+{
+    border-bottom: 1px solid grey;
+}
+// tr:hover
+// {
+//     background-color: #d9ebff;
+// }
+// a:hover
+
+// {
+//     background-color: #d9ebff;
+// }
+.card{
+    margin-top:70px;
+    margin-left: 10px;
+    height: 700px;
+    overflow: hidden;
+}
+.card-body
+{
+    margin-bottom: 0px;  // this has to be changed 
+    margin-top:-34px;
+    overflow: scroll;
+}
+
+.test:after {
+    content: '\2026';
+    font-size: 15px;
+    }
+
+    // .modal-content
+    // {
+    //     width: 160px;
+
+    // }
+.dropdown-menu{
+    right: 0px !important;
+    margin: 0px 0px 0px 0px !important;
+    left: auto !important;
+        
+}
+ .btn1
+{
+  background-color: #0b7ae8;
+}
+
+#search
+{
+    width: 160px;
+    height: 30px;
+    margin-top:40px;
+    margin-left: 5px;
+}
+.btnAction
+{
+    width: 45px;
+}
+
+
+.btnFilter
+{
+    padding: 1px;
+    margin-top: 40px;
+    width: 100px;
+    height: 30px;
+    background-color: #77ace0;
+    border-radius: 5px;
+    color:white;
+    margin-left: 5px;
+    font-family: 'Avenir Next LT Pro Regular' !important;
+    margin-bottom: 10px;
+    font-size: 14px;
+    
+}
+.btnSearch
+{   
+    background-color: #77ace0;
+    color: white;
+    padding: 1px;
+    margin-top: 40px;
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+    
+}
+.pagination.pg-purple .page-item.active .page-link {
+    background-color: #77ace0 !important;
+}
+
+
+.modal-dialog {
+    -webkit-transform: translate(0,-50%);
+    -o-transform: translate(0,-50%);
+    transform: translate(0,-50%);
+    top: 20%;
+    margin: 0 auto;
+    width: 35%;
+    position: absolute;
+    top: 300px;
+    left: 30%;
+}
+
+
+
+.modal-header{
+    background-color:#0b7ae8;
+    display: block;
+    color: white;
+}
+.modal-content {
+    overflow:hidden;
+    width: 95%;
+    height: 560px;
+}
+
+@media screen and (max-width: 1100px)
+{   
+    .smscreen
+    {
+        margin-top: 0px;
+    }
+    #search
+    {
+        margin-top: 0px;
+    }
+    .btnSearch
+    {
+        margin-top: 0px;
+    }
+    .card
+    {
+        height: 550px;
+    }
+    .modal-dialog {
+    -webkit-transform: translate(0,-50%);
+    -o-transform: translate(0,-50%);
+    transform: translate(0,-50%);
+    top: 20%;
+    margin: 0 auto;
+    width: 35%;
+    position: absolute;
+    top: 300px;
+    left: 10%;
+}
+.modal-content {
+    overflow:hidden;
+    width: 200%;
+    height: 500px;
+}
+}
+
+@media only screen and (width : 1024px) and (height: 662px) 
+{
+    .card
+    {
+        height: 550px;
+    }
+    .smscreen
+    {
+        margin-top: 40px;
+    }
+
+}
+@media only screen and (width : 1360px) and (height: 662px) 
+{
+    .card
+    {
+        height: 550px;
+    }
+
+}
+
+
+tr.row-cls.ng-star-inserted{
+    font-family: 'Avenir Next LT Pro Regular' !important;
+}

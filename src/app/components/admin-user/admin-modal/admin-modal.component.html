@@ -1,0 +1,52 @@
+
+
+  <form [formGroup]="userForm" (ngSubmit)="onFormSubmit()">
+      <div>
+          <div>
+    <input [value]="FirstName" style=" width: 99%;height: 37px;" formControlName="FirstName" placeholder="First name"></div>
+    <!-- <div *ngIf="userName.errors?.required && isValidFormSubmitted != null && !isValidFormSubmitted" [ngClass]="'error'">
+        First name required.
+    </div> -->
+</div><br>
+    
+    <div>
+    <input [value]="LastName" style="width: 99%;height: 37px;" formControlName="LastName" placeholder="Last Name">
+</div>
+    <br>
+    <int-phone-prefix  class="countryCls" [locale]="'en'"  formControlName="Phone"></int-phone-prefix>
+    <!-- <input [value]="Phone" style=" width: 99%;height: 37px;" formControlName="Phone" placeholder="Phone Number">
+        
+    <br> -->
+    <!-- <div *ngIf="Phone.errors?.required && isValidFormSubmitted != null" [ngClass]="'error'">
+        Phone Number required.
+    </div><br> -->
+    <div>
+        <br>
+    <input [value]="EmailId" style=" width: 99%;height: 37px;" formControlName="EmailId" placeholder="Email">
+    <br>
+    <!-- <div *ngIf="EmailId.errors?.required && isValidFormSubmitted != null " [ngClass]="'error'">
+        Email required.
+    </div> -->
+</div>
+    <br>
+    <div>
+        <select formControlName="Status" style=" width: 99%;height: 37px;">
+          
+            <option value="Active">Active</option>
+            <option value="InActive">InActive</option>
+
+        </select>
+       
+    </div>
+    <br>
+    <div>
+        <select  formControlName="Role" style=" width: 99%;height: 37px;">
+            <option value="User and User Profile Administrator">User and User Profile Administrator</option>
+            <option value="VoicX Posts Administrator">VoicX Posts Administrator</option>
+            <option value="Strategic Reports Administrator"> Strategic Reports Administrator</option>
+            <option value="Master Administrator">Master Administrator</option>
+        </select>
+    </div>
+    
+        
+</form>

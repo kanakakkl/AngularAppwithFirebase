@@ -1,0 +1,24 @@
+/* .example-form
+{
+    align-items: center;
+}
+.btnfield
+{   
+    width: 80%;
+    height: 40px;
+    border: 1px solid grey;
+    margin-top: 10px;
+} */
+
+.error {
+    color: red;
+}
+::ng-deep .countryCls .input-group{
+
+    width: 99% !important;
+    height: 37px !important;
+}
+::ng-deep .countryCls .input-group .dropbtn{
+    height: 37px;
+    margin-top: 0px;
+}

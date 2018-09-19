@@ -1,0 +1,38 @@
+<form [formGroup]="addAdminForm" (ngSubmit)="onFormSubmit()">
+    <div>
+        <div>
+  <input  style=" width: 99%;height: 37px;" formControlName="FirstName" placeholder="First name"></div>
+
+</div><br>
+  
+  <div>
+  <input  style=" width: 99%;height: 37px;" formControlName="LastName" placeholder="Last Name">
+</div>
+  <!-- <br>
+  <input style=" width: 99%;height: 37px;" formControlName="Phone" placeholder="Phone Number"> -->
+  
+  <br>
+ 
+  <div>
+      <br>
+  <input  style=" width: 99%;height: 37px;" formControlName="EmailId" placeholder="Email">
+  <br>
+ 
+</div>
+  <br>
+  <div>
+      <div>
+  <input type="password"  style=" width: 99%;height: 37px;" formControlName="Password" placeholder="Password"></div>
+
+</div>
+
+  <br>
+  <div>
+      <select  formControlName="Role" style=" width: 99%;height: 37px;">
+          <option value="SuperAdmin">SuperAdmin</option>
+          <option value="Admin">Admin</option>
+      </select>
+  </div>
+  
+      
+</form>
