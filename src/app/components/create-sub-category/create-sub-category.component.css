@@ -1,0 +1,15 @@
+.wh{
+    font-size: 17px;
+    color: white !important;
+    font-style: normal !important;
+    font-family: 'Avenir Next LT Pro Regular' !important;
+}
+
+.example-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .example-container > * {
+    width: 100%;
+  }

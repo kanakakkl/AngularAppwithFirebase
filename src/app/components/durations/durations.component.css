@@ -1,0 +1,21 @@
+p {
+    margin-top: 3%;
+    font-size: 38px;
+    margin-bottom: 1rem;
+    color: darkslategray;
+    font-family: 'Avenir Next LT Pro Regular' !important;
+}
+
+.card
+{
+    margin-top:70px;
+    margin-left: 10px;
+    height: 835px;
+    overflow: hidden;
+}
+.card-body
+{
+     margin-bottom: 0px; 
+     margin-top:-34px;
+     overflow: scroll;
+}

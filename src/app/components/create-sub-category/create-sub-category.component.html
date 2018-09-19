@@ -1,0 +1,48 @@
+<form [formGroup]="subCategoryForm">
+  <div class="md-form">
+    <div class="row">
+      <div class="col-4 col-sm-4">
+        <div class="flexbox">
+          <h6>
+            <b>Sub-category image</b>
+          </h6>
+          <img [src]="imageUrl" style="width:134px;height: 85px">
+        </div>
+        <br>
+        <div class="flexbox">
+          <input #fileUpload type="file" formControlName="subcategoryImage" (click)="fileUpload.value = null" (change)="handleFileInput($event.target.files)"
+            style="display:none" accept="image/*">
+          <button style="background-color: #72aae3;font-family: 'Avenir Next LT Pro Regular' !important;" type="button" class="btn1" (click)="fileUpload.click()">Choose image</button>
+        </div>
+      </div>
+      <br>
+      <div class="col-4 col-sm-8">
+        <div class="md-form">
+          <div>
+            <div>
+              <h6>
+                <b>Category name</b>
+              </h6>
+              <select   style="overflow-y:auto; height:100px;" formControlName="categoryName" style="width: 355px;height: 30px;">
+                  <option value="" selected disabled hidden>Choose your category</option>
+                  <option  *ngFor="let category of categorieslist" [value]="category.Id">{{category.CategoryName}}</option>
+                </select>
+            </div>
+            <br>
+            <h6>
+              <b>Sub-Category name</b>
+            </h6>
+            <textarea type="text" class="textarea" formControlName="subcategoryName" placeholder="Title Of Your Sub-category" mdbInputDirective></textarea>
+          </div>
+          <div style="padding-top: 18px">
+            <h6>
+              <b>Description</b>
+            </h6>
+            <textarea type="text" class="textarea1" formControlName="subcategoryDescription" placeholder="Some Words About The Sub-category"
+              mdbInputDirective></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
