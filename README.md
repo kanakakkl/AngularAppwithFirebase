@@ -1,1 +1,1 @@
-Developers Ramana, Manikanta, Srinivas, Kanaka
+Angular with Firebase app
