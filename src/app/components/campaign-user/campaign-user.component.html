@@ -1,0 +1,78 @@
+
+
+<div class="card">
+  <div class="card-body">
+
+    <!-- Grid row -->
+    <div class="row ">
+        <!-- <input #fileUpload type="file" formControlName="categoryImage" (click)="fileUpload.value = null" (change)="handleFileInput($event.target.files)" style="display:none"
+        accept="image/*"> -->
+      <input #Upload type="file" name="File Upload" id="txtFileUpload" (change)="incomingfile($event)" (click)="Upload.value = null" accept=".csv" style="display: none">
+      <button  type="button" class=" btnFile" mdbWavesEffect (click)="Upload.click()">Upload data file <span style="padding-left:5px"><i class="fa fa-upload" aria-hidden="true"></i></span></button>
+      <button type="button" class=" btnAdd" mdbWavesEffect>Add new</button>
+      <button type="button" class=" btnFilterseq" mdbWavesEffect>Sequence number</button>
+      <button type="button" class=" btnFilter" mdbWavesEffect>CampaignId</button>
+      <button type="button" class=" btnFilter" mdbWavesEffect>phone</button>
+      <button type="button" class=" btnFilter" mdbWavesEffect>Email ID</button> 
+      <button type="button" class=" btnFilterseq" mdbWavesEffect>Subscription Type</button>
+      <button type="button" class=" btnFilter" mdbWavesEffect>Country</button>
+      <input style="height:30px;margin-top:40px;margin-left:20px" type="search" placeholder="Start Searching..." [(ngModel)]="searchText" id="search" class="form-control" mdbInputDirective [mdbValidate]="false">
+      <button  type="button" class=" btnSearch" mdbWavesEffect><i class="fa fa-search" aria-hidden="true"></i></button>
+          <!-- <label for="search">Search data</label> -->
+    </div>
+    <!-- Grid row -->
+    <ngx-spinner bdColor="rgba(51, 51, 51, 0.8)" size="medium" color="#77ace0" type="line-spin-clockwise-fade"></ngx-spinner>
+    <!--Table-->
+    
+    <table class="table">
+
+      <!--Table head-->
+      <thead>
+        <tr>
+          <th class="thh">SequenceNo</th>
+          <th class="thh">CampaignId</th>
+          <th class="thh">Phone</th>
+          <th class="thh">EmailID</th>
+          <th class="thh">Subscription</th>
+          <th class="thh">Country</th>
+          <th class="thh">State</th>
+          <th class="thh">City</th>
+          <!-- <th class="thh">Actions</th> -->
+        </tr>
+      </thead>
+      <!--Table head-->
+
+      <!--Table body-->
+      <tbody>
+        <tr *ngFor="let campaign of search()">
+          <td class="thdata" scope="row" >{{campaign.SequenceNo}}</td>
+          <td>{{campaign.CampaignId}}</td>
+          <td>{{campaign.Phone}}</td>
+          <td>{{campaign.EmailId}}</td>
+          <td>{{campaign.Subscription}}</td>
+          <td>{{campaign.Country}}</td>
+          <td>{{campaign.State}}</td>
+          <td>{{campaign.City}}</td>
+         
+          <!-- <td>
+            <div class="btn-group" mdbDropdown>
+              <button class="btnAction" mdbDropdownToggle type="button"  mdbWavesEffect>
+                <div class="test"></div>
+              </button>
+            
+              <div class="dropdown-menu dropdown-primary">
+                  <a class="dropdown-item" href="#">Edit</a>
+                  <a class="dropdown-item" href="#">Save</a>
+                  <a class="dropdown-item" href="#">View</a>
+                  <a class="dropdown-item" href="#">Delete</a>
+              </div>
+            </div>
+          </td> -->
+        
+        </tr>
+      </tbody>
+      <!--Table body-->
+    </table>
+    <!--Table-->
+  </div>
+</div>

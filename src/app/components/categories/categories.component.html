@@ -1,0 +1,176 @@
+<!-- <button class="btn btn-primary" style="margin-top:20%;" id="btnOpen" (click)="openModal(true)">Hierarchy</button> -->
+<div class="card">
+  <div class="card-body" [ngStyle]=" {'opacity': mdlSampleIsOpen || isCreateSubCategory || mdlEditIsOpen || mdlCategoryEditIsOpen? '0.4' : '1','pointer-events': mdlSampleIsOpen || isCreateSubCategory || mdlEditIsOpen || mdlCategoryEditIsOpen? 'none' : 'auto'}">
+    <mat-toolbar class="tb-categories">
+      <mat-toolbar-row class="tb-first-row">
+
+        <div class="md-form">
+          <input type="search" [(ngModel)]="searchText" id="search" class="form-control search-view-cls mainLoginInput" mdbInputDirective
+            [mdbValidate]="false" placeholder="Search category">
+        </div>
+        <!-- <button class="search-btn-cls" (click)="searchclick()" mat-raised-button style="background-color: #77ace0;font-size: 15px;color: #fff;">Search</button> -->
+        <span flex style="flex-grow:2;"></span>
+        <div fx-layout="column">
+          <button mat-raised-button style="background-color: #77ace0; 
+    font-size: 15px;
+    color: #fff;
+  font-weight: 400 !important;
+  font-family: 'Avenir Next LT Pro Regular' !important;  
+" id="btnOpen" (click)="openCategoryModal(true,null,true)">Create category</button>
+        </div>
+      </mat-toolbar-row>
+      <mat-toolbar-row class="tb-row-cls">
+        <mat-spacer style="padding:1px;"></mat-spacer>
+        <div>
+          <button mat-raised-button style="background-color: #77ace0; 
+    font-size: 14px;
+    color: #fff;
+  font-weight: 400 !important;
+  font-family: 'Avenir Next LT Pro Regular' !important;  
+" (click)="openModal(true,null,true)">Add Sub-Category</button>
+        </div>
+      </mat-toolbar-row>
+      <mat-toolbar-row class="headers-cls">
+        <span mat-subheader class="category-header-cls">Category</span>
+        <span mat-subheader class="subcategory-header-cls">Sub-categories</span>
+      </mat-toolbar-row>
+    </mat-toolbar>
+    <mat-divider></mat-divider>
+    <ngx-spinner bdColor="rgba(51, 51, 51, 0.8)" size="medium" color="#77ace0" type="line-spin-clockwise-fade"></ngx-spinner>
+    <mat-grid-list cols="2" rowHeight="2:1" class="mt-grid-categories">
+      <mat-grid-tile class="md-grid-col1">
+        <mat-list class="mat-list-col1">
+          <div *ngFor="let category of search()">
+            <mat-list-item *ngIf="category.Status == 'active'" [class.inside]="showElement">
+              <div></div>
+              <div mat-line class="mat-line-col1">
+                <img *ngIf="!category.Show" src= {{category.ImageUrl}}  class="md-card-image isstatus" alt="img" />
+                <img *ngIf="category.Show" src= {{category.ImageUrl}}  class="md-card-image" alt="img" />
+                <div class="text-col1">
+                  <p *ngIf="!category.Show"  mat-line (mouseover)="fireEvent($event)" style="float:left;width:94px;padding:2px;" (click)="getRelatedSubcategories(category)"
+                  (change)="getRelatedSubcategories(category)" class="md-text-col1 isstatus" [ngClass]="{active: isActive(category.CategoryName)}">{{ category.CategoryName }}</p>
+                  <p *ngIf="category.Show"  mat-line (mouseover)="fireEvent($event)"  style="float:left;width:94px;padding:2px;" (click)="getRelatedSubcategories(category)"
+                  (change)="getRelatedSubcategories(category)" class="md-text-col1" [ngClass]="{active: isActive(category.CategoryName)}">{{ category.CategoryName }}</p>
+                  <span style="float:right;padding-top:6px;">
+                    <a  *ngIf="!category.Show" class="edit-cls isstatus" (click)="openCategoryModal(true,category,false)">
+                      <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                    </a>
+                    <a  *ngIf="category.Show" class="edit-cls" (click)="openCategoryModal(true,category,false)">
+                        <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                      </a>
+                    <a (click)="category[i] = !category[i]">
+                        <i class="fa fa-eye-slash"  (click)="showCategory(category,$event,i)" *ngIf="category[i] || !category.Show"></i>
+                        <i class="fa fa-eye" (click)="hideCategory(category,$event,i)"  *ngIf="!category[i] && category.Show"></i>
+                    </a>
+                  </span>
+                </div>
+              </div>
+            </mat-list-item>
+          </div>
+        </mat-list>
+      </mat-grid-tile>
+      <mat-grid-tile class="md-grid-col2">
+        <mat-list class="mat-list-col2">
+          <span *ngIf="SelectedSubcategories?.length > 0">
+            <div *ngFor="let subcategory of SelectedSubcategories;let i = index">
+              <mat-list-item *ngIf="subcategory.Status == 'active'" class="mat-item-list-col2">
+                <div mat-line class="mat-line-col2">
+                  <img *ngIf="subcategory.Show" src= {{subcategory.ImageUrl}} class="md-card-image" alt="image caption" />
+                  <img *ngIf="!subcategory.Show" src= {{subcategory.ImageUrl}} class="md-card-image isstatus" alt="image caption" />
+                  <p (mouseover)="fireEvent($event)"  *ngIf="subcategory.Show" style="float: left; width:700px; padding:6px;" class="md-text-col2">{{ subcategory.SubcategoryName }}</p>
+                  <p (mouseover)="fireEvent($event)"  *ngIf="!subcategory.Show" style="float: left; width:700px; padding:6px;" class="md-text-col2 isstatus">{{ subcategory.SubcategoryName }}</p>
+                  <div style="float: right;padding:10px;">
+                      <a  *ngIf="!subcategory.Show"  class="subedit-cls isstatus" (click)="openModal(true,subcategory,false)">
+                          <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                        </a>
+                    <a  *ngIf="subcategory.Show"  class="subedit-cls" (click)="openModal(true,subcategory,false)">
+                      <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                    </a>
+                    <a (click)="subcategory[i] = !subcategory[i]">
+                        <i class="fa fa-eye-slash"  (click)="showSubCategory(subcategory,$event,i)"*ngIf="!subcategory.Show"></i>
+                        <i class="fa fa-eye" (click)="hideSubCategory(subcategory,$event,i)"  *ngIf="subcategory.Show"></i>
+                    </a>
+                  </div>
+                </div>
+              </mat-list-item>
+            </div>
+          </span>
+          <span style="font-style: oblique;" *ngIf="SelectedSubcategories?.length == 0">
+            <mat-list-item>Please create a subcategory to display</mat-list-item>
+          </span>
+        </mat-list>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
+</div>
+
+<!--create category modal-->
+<div id="mdlSample" role="dialog" [ngStyle]=" {'display': isCreateSubCategory ? 'block' : 'none','opacity': 1}">
+  <div style=" max-width: 580px !important;" class="modal-dialog modal-lg ">
+    <!-- Content and Header -->
+    <div class="modal-content">
+  <div style="background-color:#72aae3;color: white; font-family: 'Avenir Next LT Pro Regular' !important;"
+        class="modal-header text-center">
+        <h4 *ngIf=isCategoryTitle class="modal-title w-100">
+          <b>Create new category</b>
+        </h4>
+        <h4 *ngIf=!isCategoryTitle class="modal-title w-100">
+          <b>Category</b>
+        </h4>
+        <button style="color: white;opacity: inherit !important;text-shadow: none !important;" type="button" class="close" data-dismiss="modal"
+          aria-label="Close" (click)="openCategoryModal(false,null,null)">
+          <span style=" font-size: 13.5px;padding-right: 3px" aria-hidden="true" class="wh">Cancel</span>
+          <span>
+            <i class="fa fa-times" aria-hidden="true"></i>
+          </span>
+        </button>
+      </div>
+
+      <div style="font-family: 'Avenir Next LT Pro Regular' !important;" class="modal-body">
+        <app-newtopic [categorydatakey]=c ategoryrecordkey></app-newtopic>
+      </div>
+      <div *ngIf=isCategoryTitle style=" font-family: 'Avenir Next LT Pro Regular' !important; margin-top: -37px !important;" class="modal-footer float-right">
+        <button style="background-color: #73c76d " (click)="createCategory()" type="button" class="btn btn-success">Create Category</button>
+      </div>
+      <div *ngIf=!isCategoryTitle style=" font-family: 'Avenir Next LT Pro Regular' !important;" class="modal-footer float-right">
+        <button style="background-color: #73c76d " [disabled]="isCategoryDisabled()" type="button" class="btn btn-success" (click)="updateCategory()">Submit</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!--create sub category modal-->
+<div id="mdlSample" role="dialog" [ngStyle]=" {'display': mdlSampleIsOpen ? 'block' : 'none','opacity': 1}">
+  <div style=" max-width: 580px !important;" class="modal-dialog modal-lg ">
+    <!-- Content and Header -->
+    <div class="modal-content">
+      <div style="background-color:#72aae3; color: white;font-family: 'Avenir Next LT Pro Regular' !important;"
+        class="modal-header text-center">
+        <h4 *ngIf=isSubcategory class="modal-title w-100">
+          <b>Create new sub-category</b>
+        </h4>
+        <h4 *ngIf=!isSubcategory class="modal-title w-100">
+          <b>Sub-category</b>
+        </h4>
+        <button style="color: white;opacity: inherit !important;text-shadow: none !important;" type="button" class="close" data-dismiss="modal"
+          aria-label="Close" (click)="openModal(false)">
+          <span style=" font-size: 13.5px;padding-right: 3px" aria-hidden="true" class="wh">Cancel</span>
+          <span>
+            <i class="fa fa-times" aria-hidden="true"></i>
+          </span>
+        </button>
+      </div>
+
+      <div style="font-family: 'Avenir Next LT Pro Regular' !important;" class="modal-body">
+        <app-create-sub-category [categoryData]="categories"></app-create-sub-category>
+      </div>
+      <div *ngIf=isSubcategory class="modal-footer float-right">
+        <button type="button" class="btn btn-success" (click)="CreateSubCategory()">Create subcategory</button>
+      </div>
+      <div *ngIf=!isSubcategory class="modal-footer float-right">
+        <button type="button" class="btn btn-success" [disabled]="isSubcategoryDisabled()" (click)="updateSubCategory()">Submit</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,252 @@
+table
+{
+    border-bottom: 0.5px solid grey;
+}
+thead
+{
+    background-color:#d8e0ea;
+
+}
+th
+{
+    border-right: 1px solid grey;
+    
+}
+td{
+    border-right: 1px solid grey;
+}
+.thh
+{
+    border-bottom: 1px solid grey;
+}
+tr:hover
+{
+    background-color: #d9ebff;
+}
+a:hover
+
+{
+    background-color: #d9ebff;
+}
+
+
+.test:after {
+    content: '\2026';
+    font-size: 15px;
+    }
+
+    .modal-content
+    {
+        width: 160px;
+
+    }
+.dropdown-menu{
+    right: 0px !important;
+    margin: 0px 0px 0px 0px !important;
+    left: auto !important;
+        
+}
+
+#search
+{
+    width: 200px;
+    height: 44px;
+    margin-top:8px;
+
+}
+.btnAction
+{
+    width: 45px;
+}
+.btnFile
+{   margin-left: 20px;
+    padding: 1px;
+    margin-top: 40px;
+    width: 200px;
+    height: 30px;
+    background-color: #76afe8;
+    border-radius: 5px;
+    color: white;
+    margin-bottom: 10px;
+}
+.btnAdd
+{
+    padding: 1px;
+    margin-top: 40px;
+    width: 120px;
+    height: 30px;
+    background-color: #76afe8;
+    border-radius: 5px;
+    color: white;
+    margin-left: 5px;
+
+}
+.btnFilter
+{
+    padding: 1px;
+    margin-top: 40px;
+    width: 100px;
+    height: 30px;
+    margin-left: 5px;
+    
+}
+.btnFilterseq
+{
+    padding: 1px;
+    margin-top: 40px;
+    width: 154px;
+    height: 30px;
+    background-color: #77ace0;
+    border-radius: 5px;
+    color:white;
+    margin-left: 5px;
+    
+}
+.btnSearch
+{
+    padding: 1px;
+    margin-top: 40px;
+    width: 30px;
+    height: 30px;
+    margin-left: 5px;
+    
+}
+
+
+thead
+{
+    background-color:#d8e0ea;
+
+}
+th
+{
+    border-right: 1px solid grey;
+    
+}
+td{
+    border-right: 1px solid grey;
+}
+.thh
+{
+    border-bottom: 1px solid grey;
+}
+tr:hover
+{
+    background-color: #d9ebff;
+}
+a:hover
+
+{
+    background-color: #d9ebff;
+}
+.card
+{
+    margin-top:70px;
+    margin-left: 10px;
+    height: 700px;
+    overflow: hidden;
+}
+.card-body
+{
+     margin-bottom: 0px;
+     margin-top:-34px;
+     overflow: scroll;
+}
+
+.test:after {
+    content: '\2026';
+    font-size: 15px;
+    }
+
+    .modal-content
+    {
+        width: 160px;
+
+    }
+.dropdown-menu{
+    right: 0px !important;
+    margin: 0px 0px 0px 0px !important;
+    left: auto !important;
+        
+}
+
+#search
+{
+    width: 200px;
+    height: 44px;
+    margin-top:8px;
+
+
+}
+/* .btnAction
+{
+    width: 45px;
+    background-color: #77ace0;
+    border-radius: 5px;
+    color:white;
+} */
+
+.btnFilter
+{
+    padding: 1px;
+    margin-top: 40px;
+    width: 100px;
+    height: 30px;
+    background-color: #77ace0;
+    border-radius: 5px;
+    color:white;
+    
+}
+.btnFilter1
+{
+    padding: 1px;
+    margin-top: 40px;
+    width: 120px;
+    height: 30px;
+    background-color: #77ace0;
+    border-radius: 5px;
+    color:white;
+}
+.btnSearch
+{
+    padding: 1px;
+    margin-top: 40px;
+    width: 30px;
+    height: 30px;
+    background-color: #77ace0;
+    border-radius: 5px;
+    color:white;
+   
+}
+ /* .scrollit {
+   /* overflow:scroll;
+    height:450px;
+} */
+
+/* table {
+    width: 100%;
+}
+
+thead, tbody, tr, td, th { display: block; }
+
+tr:after {
+content: '';
+display: block;
+visibility: hidden;
+clear: both;
+}
+
+tbody {
+height: 560px;
+overflow-y: auto;
+}
+
+tbody::-webkit-scrollbar {
+	width: 0 !important;
+}
+
+
+tbody td, thead th {
+width: 11%;
+float: left;
+}  */

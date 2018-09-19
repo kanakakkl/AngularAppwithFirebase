@@ -1,0 +1,282 @@
+.mat-list-icon {
+	color: rgba(0, 0, 0, 0.54);
+}
+
+.md-card-image {
+	width: 62px;
+	height: 39px;
+	float: left;
+	border: 1px solid #d0d0d0;
+	bottom: 26px;
+}
+
+.md-text {
+	top: 2px;
+	padding: 10px;
+}
+
+.md-text-col1 {
+	font-size: 17px !important;
+	font-weight: 700;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	cursor: pointer;
+}
+
+.md-text-col2 {
+	font-size: 16px !important;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.md-grid-col1 {
+	left: auto !important;
+	height: 100% !important;
+	width: 20% !important;
+	margin-top: auto !important;
+	padding: 0px !important;
+	overflow: hidden;
+}
+
+.md-grid-col2 {
+	left: 21% !important;
+	width: 100% !important;
+	margin-top: 0px;
+	padding-top: 0px !important;
+	height: 100% !important;
+}
+
+.search-view-cls {
+	border: 1px solid #ced4da !important;
+	width: 160% !important;
+	border-radius: 4px !important;
+}
+
+.md-form {
+	position: relative;
+	margin-top: 4px;
+	margin-bottom: auto !important;
+}
+
+.category-btn-cls {
+	margin-left: 60%;
+	margin-top: 3px;
+}
+
+.subcategory-btn-cls {
+	margin-left: 90%;
+}
+
+.mat-toolbar {
+	background-color: #fff !important;
+	margin-top: 1.5% !important;
+}
+
+.tb-row-cls {
+	height: 45px;
+	flex-direction: column;
+	align-items: flex-end;
+	align-content: flex-end;
+	padding: 0px !important;
+}
+
+.tb-first-row {
+	height: 40px;
+	padding: 0px !important;
+}
+
+.mat-raised-button {
+	width: 145px;
+}
+
+.md-form label {
+	font-family: 'Avenir Next LT Pro Regular' !important;
+	font-size: 16px;
+	font-weight: normal;
+	top: 5px !important;
+	left: 0;
+}
+
+.search-icon-cls {
+	padding-left: 8px;
+	padding-right: 7px;
+}
+
+.search-btn-cls {
+	margin-top: 0.3% !important;
+    margin-left: 9% !important;
+	width: 110px !important;
+	font-family: 'Avenir Next LT Pro Regular' !important;
+}
+
+.mt-grid-categories {
+	background-color: #fff !important;
+	padding-bottom: calc(((1 * ((42.5% - 0.5px) * 1)) + 0px) + 0px) !important;
+	margin-right: 213px important;
+}
+
+.fa {
+	font-size: 18px !important;
+	text-rendering: auto;
+	padding: 3px;
+}
+
+.card {
+	margin-top: 70px;
+	margin-left: 10px;
+	overflow: hidden;
+}
+
+.card-body {
+	margin-bottom: 0px;
+	margin-top: -34px;
+}
+
+.headers-cls {
+	height: 14px !important;
+	padding: 0px !important;
+}
+
+.category-header-cls {
+	padding: 0px 0px 17px 0px!important;
+	font-family: 'Avenir Next LT Pro Regular' !important;	
+	font-size: 16px !important;
+	font-weight: bold;
+}
+
+.subcategory-header-cls {
+	font-family: 'Avenir Next LT Pro Regular' !important;	
+	padding: 0px 0px 17px 210px!important;
+	font-size: 16px !important;
+	font-weight: bold;
+}
+
+::ng-deep .md-grid-col1 .mat-figure {
+	align-items: initial !important;
+	justify-content: initial !important;
+}
+
+::ng-deep .md-grid-col2 .mat-figure {
+	align-items: initial !important;
+	justify-content: initial !important;
+}
+
+.mat-list-col1 {
+	overflow-y: scroll;
+	width: 100%;
+}
+
+.mat-list-col1::-webkit-scrollbar {
+	width: 0 !important
+}
+
+.mat-list-col2>.mat-list-item:nth-child(2n+1) {
+	background-color: #fff;
+	height: 41px !important;
+}
+
+.mat-list-col2>.mat-list-item:nth-child(2n) {
+	background-color: rgb(232, 232, 232);
+	height: 41px !important;
+}
+
+.mat-list-col2 {
+	overflow-y: scroll;
+	width: 80%;
+}
+
+.mat-list-col2::-webkit-scrollbar {
+	width: 0 !important;
+}
+
+::ng-deep .mat-item-list-col2 .mat-list-item-content {
+	padding: 0px !important;
+}
+
+.modal-dialog {
+	-webkit-transform: translate(0,-50%);
+    -o-transform: translate(0,-50%);
+    transform: translate(0,-50%);
+    top: 10%;
+    margin: 0 auto;
+    width: 50%;
+    position: absolute;
+    top: 365px;
+    left: 28%;
+}
+
+.modal-header {
+	background-color: rgb(164, 197, 235);
+}
+
+.modal-content {
+	overflow: hidden;
+}
+
+.btn-success {
+	font-family: 'Avenir Next LT Pro Regular' !important;
+	background-color: #6aca66!important;
+	text-transform: lowercase !important;
+	font-size: 18px;
+	padding: 6px 12px;
+	border-radius: 5px;
+	width: 35%;
+}
+
+::ng-deep .mat-list-col1 .mat-list-item-content {
+	padding: 0px !important;
+}
+
+::ng-deep .mat-list-col1 .md-card-image {
+	height: 46px !important;
+	width: 75px !important;
+	border: 1px solid #d0d0d0;
+}
+
+.mat-line-col1 {
+	border-bottom: 0.5px solid gray;
+	border-bottom-style: dotted;
+	padding-bottom: 4px !important;
+}
+
+.mainLoginInput::-webkit-input-placeholder {
+	font-family: 'Avenir Next LT Pro Regular' !important;
+	font-weight: normal;
+	overflow: visible;
+	vertical-align: top;
+	display: inline-block !important;
+	padding-left: 5px;
+	padding-top: 2px;
+	color: #6c757d;
+}
+
+.mat-list-item {
+	font-family: 'Avenir Next LT Pro Regular' !important;
+	height: auto !important;
+}
+
+.text-col1 {
+	position: absolute;
+	/* //padding: 0.5% 5%; */
+	display: contents;
+}
+
+.active {
+	font-weight: 700;
+	color: #77ace0;
+	cursor: pointer;
+}
+
+.isstatus{
+	filter: blur(0.85px);
+	pointer-events: none;
+	cursor: none;
+	color: #000;
+}
+
+.md-line{
+	margin: 0px;
+}
+

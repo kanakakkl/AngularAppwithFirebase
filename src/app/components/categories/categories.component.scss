@@ -1,0 +1,14 @@
+
+#mdlSample::after{
+	& .card-body{
+        opacity: 0.2;
+        pointer-events: none;
+	}
+}
+
+#mdlSample::before{
+	& .card-body{
+        opacity: 1;
+        pointer-events: auto;
+	}
+}
