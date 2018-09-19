@@ -1,0 +1,41 @@
+
+
+  <form [formGroup]="postForm" (ngSubmit)="onFormSubmit()">
+    <div>
+        <div>
+  <input [value]="FirstName" style=" width: 99%;height: 37px;" readonly formControlName="FirstName" placeholder="First Name"></div>
+  
+</div><br>
+<div>
+    <div>
+<input [value]="LastName" style=" width: 99%;height: 37px;" readonly formControlName="LastName" placeholder="Last Name"></div>
+
+</div><br>
+
+  <input [value]="Phone" style=" width: 99%;height: 37px;" readonly formControlName="Phone" placeholder="Phone Number">
+  <br>
+
+  <div>
+      <br>
+  <input [value]="EmailId" style=" width: 99%;height: 37px;" readonly formControlName="EmailId" placeholder="Email">
+  <br>
+ 
+</div>
+<!-- <div>
+    <br>
+<input [value]="City" style=" width: 99%;height: 37px;" readonly formControlName="City" placeholder="City">
+<br>
+
+</div> -->
+<br>
+<input [value]="Topic" style=" width: 99%;height: 37px;"  formControlName="Topic" placeholder="Topic">
+  <br>
+  <br>
+  <div>
+      <select  formControlName="postStatus" style=" width: 99%;height: 37px;">
+          <option value="Block">Block</option>
+          <option value="Unblock">Unblock</option>
+          
+      </select>
+  </div>
+</form>

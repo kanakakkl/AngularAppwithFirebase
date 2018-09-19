@@ -1,0 +1,157 @@
+
+<div class="card">
+  <div class="card-body">
+    <ngx-spinner bdColor="rgba(51, 51, 51, 0.8)" size="medium" color="#77ace0" type="line-spin-clockwise-fade"></ngx-spinner>
+    <!-- Grid row -->
+    <div [ngStyle]=" {'opacity': usrmdlSampleIsOpen ? '0.4' : '1','pointer-events': usrmdlSampleIsOpen ? 'none' : 'auto'}" class="row btncls">
+
+      <div class=" col-md-9 text-left smlDiv" >
+      <button type="button" class=" btnFilter " mdbWavesEffect>Date<span style="padding-left:5px"><i class="fa fa-calendar" aria-hidden="true"></i></span></button>
+      <button type="button" class=" btnFilter" mdbWavesEffect>Country</button>
+      <button type="button" class=" btnFilter smlScreen" mdbWavesEffect>Phone</button>
+      <button type="button" class=" btnFilter" mdbWavesEffect>Email ID</button>
+      <button type="button" class=" btnFilter" mdbWavesEffect>First Name</button>
+      <button type="button" class=" btnFilter" mdbWavesEffect>Last Name</button>
+      <div class="sepSearch">
+        <input  type="search" placeholder="Start Searching..." [(ngModel)]="searchText" id="search" class="form-control" mdbInputDirective [mdbValidate]="false">
+       <button type="button" class=" btnSearch" mdbWavesEffect><i class="fa fa-search" aria-hidden="true"></i></button>
+      </div>
+      
+      </div>
+
+      <div class="acDiv">
+      <button type="button" class=" btnFilter" mdbWavesEffect>Locked Users</button>
+      <button type="button" class=" btnFilter1" mdbWavesEffect>Blocked Users</button>
+      <button type="button" class=" btnFilter" mdbWavesEffect>Deleted</button>
+    </div>
+    </div>
+    <!-- Grid row -->
+
+    <!--Table-->
+    <table [ngStyle]=" {'opacity': usrmdlSampleIsOpen  ? '0.4' : '1','pointer-events': usrmdlSampleIsOpen  ? 'none' : 'auto'}" class="table table-striped">
+
+      <!--Table head-->
+      <thead>
+        <tr>
+          <th class="thh">User ID</th>
+          <th class="thh">First Name</th>
+          <th class="thh">Last Name</th>
+          <th class="thh">Phone</th>
+          <th class="thh">Email ID</th>
+          <th class="thh">User Type</th>
+          <th class="thh">Status</th>
+          <th class="thh">Created Time</th>
+          <th class="thh">Updated Time</th>
+          <th class="thh">IP Address</th>
+          <th class="thh">Number of Accounts</th>
+          <th class="thh">Actions</th>
+        </tr>
+      </thead>
+      <!--Table head-->
+     
+      <!--Table body-->
+      <tbody>
+        <tr [ngStyle]=" {'background-color' : data.Status == 'Blocked' || data.Status == 'Locked' ? '#e8abab' : 'transparent'}" *ngFor="let data of search(),let i=index" (click)="setClickedRow(i)" [class.active]="i == selectedRow">
+          <td class="thdata" *ngIf="i >= firstVisibleIndex && i <= lastVisibleIndex" scope="row">User{{i+1}}</td>
+          <td *ngIf="i >= firstVisibleIndex && i <= lastVisibleIndex">{{data.FirstName}}</td>
+          <td *ngIf="i >= firstVisibleIndex && i <= lastVisibleIndex">{{data.LastName}}</td>
+          <td *ngIf="i >= firstVisibleIndex && i <= lastVisibleIndex">{{data.PhoneNumber}}</td>
+          <td *ngIf="i >= firstVisibleIndex && i <= lastVisibleIndex">{{data.Email}}</td>
+          <td *ngIf="i >= firstVisibleIndex && i <= lastVisibleIndex">{{data.UserType}}</td>
+          <td *ngIf="i >= firstVisibleIndex && i <= lastVisibleIndex">{{data.Status}}</td>
+          <td *ngIf="i >= firstVisibleIndex && i <= lastVisibleIndex">{{data.CreateDateTime * 1000 | date: 'M/d/yy, h:mm a'}}</td>
+          <td *ngIf="i >= firstVisibleIndex && i <= lastVisibleIndex">{{data.UpdatedDateTime  * 1000 | date: 'M/d/yy, h:mm a'}}</td>
+          <td *ngIf="i >= firstVisibleIndex && i <= lastVisibleIndex">{{data.IPAdress}}</td>
+          <td *ngIf="i >= firstVisibleIndex && i <= lastVisibleIndex">{{data.nofaccounts}}</td>
+          
+          <td *ngIf="i >= firstVisibleIndex && i <= lastVisibleIndex">
+            <div class="btn-group" mdbDropdown>
+              <button class="btnAction" mdbDropdownToggle type="button"  mdbWavesEffect>
+                <div class="test"></div>
+              </button>
+            
+              <div class="dropdown-menu dropdown-primary">
+                <a (click)="actionClick(action.value,data)" *ngFor="let action of actions" class="dropdown-item" [value]="action.value">
+                  {{action.viewValue}}
+                </a>
+              </div>
+            </div>
+          </td>
+        
+        </tr>
+      </tbody>
+      <!--Table body-->
+    </table>
+    <!--Table-->
+    
+   
+    <div role="dialog" [ngStyle]=" {'display': usrmdlSampleIsOpen  ? 'block' : 'none','opacity': 1,'width':'35%','margin-top':'-106%','margin-left':'35%'}">
+      <div  class="modal-dialog modal-lg ">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 style="text-align:center">User</h4>
+          </div>
+          <div [ngStyle]=" {'background-color' : viewColor ? 'lightgray' : 'transparent'}" class="modal-body">
+            <app-user-modal *ngIf=isUsrModelActive  [usrdataKey]="usrdataKey" [usrdisabledFieldsInchild]="usrdisabledFields" [usrData]="userList"></app-user-modal>
+          </div>
+          <div class="modal-footer" floatright>
+            <button type="button" id="btnClose" class="btn btn1" (click)="openUsrModal(false)">
+              Cancel </button>
+            <button type="button" id="btnClose" class="btn btn1" (click)="updateUserInfo(userList)" [ngStyle]=" {'display': editSelect ? 'block' : 'none'}">
+              Submit </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+     <!--Bottom Table UI-->
+     <div class="d-flex justify-content-center">
+
+      <!--Pagination -->
+      <nav class="my-4 pt-2">
+        <ul class="pagination pagination-circle pg-purple mb-0">
+
+          <!--First-->
+          <li class="page-item clearfix d-none d-md-block" (click)="firstPage()" [ngClass]="{disabled: activePage == 1}">
+            <a class="page-link">First</a>
+          </li>
+
+          <!--Arrow left-->
+          <li class="page-item" (click)="previousPage($event)" [ngClass]="{disabled: activePage == 1}">
+            <a class="page-link" aria-label="Previous">
+              <span aria-hidden="true">&laquo;</span>
+              <span class="sr-only">Previous</span>
+            </a>
+          </li>
+
+          <!--Numbers-->
+          <li #pages *ngFor="let page of paginators | slice:firstVisiblePaginator:lastVisiblePaginator; let i = index" class="page-item"
+            [ngClass]="{active: i + firstVisiblePaginator + 1 == activePage}">
+            <a class="page-link waves-light" (click)="changePage($event)" mdbWavesEffect>{{page}}</a>
+          </li>
+
+
+
+          <!--Arrow right-->
+          <li class="page-item" (click)="nextPage($event)" [ngClass]="{disabled: activePage == numberOfPaginators}">
+            <a class="page-link" aria-label="Next">
+              <span aria-hidden="true">&raquo;</span>
+              <span class="sr-only">Next</span>
+            </a>
+          </li>
+
+          <!--First-->
+          <li class="page-item clearfix d-none d-md-block" (click)="lastPage()" [ngClass]="{disabled: activePage == numberOfPaginators}">
+            <a class="page-link">Last</a>
+          </li>
+
+        </ul>
+      </nav>
+      <!--/Pagination -->
+
+    </div>
+    <!--Bottom Table UI-->
+
+
+</div>
+</div>

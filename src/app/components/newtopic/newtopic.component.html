@@ -1,0 +1,37 @@
+<form [formGroup]="categoryForm">
+<div class="md-form">
+  <div class="row">
+    <div class="col-4 col-sm-4">
+      <div class="flexbox">
+        <h6>
+          <b>Category Image</b>
+        </h6>
+        <img [src]="imageUrl" style="width:134px;height: 85px">
+      </div>
+      <br>
+      <div class="flexbox">
+        <input #fileUpload type="file" formControlName="categoryImage" (click)="fileUpload.value = null" (change)="handleFileInput($event.target.files)" style="display:none"
+          accept="image/*">
+        <button style="background-color: #72aae3" type="button" class="btn1" (click)="fileUpload.click()">Choose image</button>
+      </div>
+    </div>
+    <br>
+    <div class="col-4 col-sm-8">
+      <div class="md-form">
+        <div>
+          <h6>
+            <b>Category name</b>
+          </h6>
+          <textarea id = "categoryNameId" type="text"  [value] = "categoryName" class="textarea" formControlName="categoryName" placeholder="Title Of Your Category" mdbInputDirective></textarea>
+        </div>
+        <div style="padding-top: 18px">
+          <h6>
+            <b>Description</b>
+          </h6>
+          <textarea type="text" [value] = "categoryDescription" class="textarea1" formControlName="categoryDescription" placeholder="Some Words About The Category" mdbInputDirective></textarea>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</form>

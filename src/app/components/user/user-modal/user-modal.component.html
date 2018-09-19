@@ -1,0 +1,42 @@
+
+
+  <form [formGroup]="nomUserForm" (ngSubmit)="onFormSubmit()">
+    <div>
+        <div>
+  <input [value]="FirstName" style=" width: 99%;height: 37px;" readonly formControlName="FirstName" placeholder="First name"></div>
+  
+</div><br>
+  
+  <div>
+  <input [value]="LastName" style="width: 99%;height: 37px;" readonly formControlName="LastName" placeholder="Last Name">
+</div>
+  <br>
+  <input [value]="Phone" style=" width: 99%;height: 37px;" readonly formControlName="Phone" placeholder="Phone Number">
+  <br>
+
+  <div>
+      <br>
+  <input [value]="EmailId" style=" width: 99%;height: 37px;" readonly formControlName="EmailId" placeholder="Email">
+  <br>
+ 
+</div>
+<br>
+    <div>
+        <select formControlName="Status" style=" width: 99%;height: 37px;">
+          
+            <option value="Active">Active</option>
+            <option value="Blocked">Blocked</option>
+            <option value="Locked">Locked</option>
+        </select>
+       
+    </div>
+  <br>
+  <br>
+  <div>
+      <select  formControlName="userType" style=" width: 99%;height: 37px;">
+          <option value="Common">Common</option>
+          <option value="Subscribed">Subscribed</option>
+          
+      </select>
+  </div>
+</form>

@@ -1,0 +1,300 @@
+table tr.active td {
+    background-color:#d9ebff !important;
+  }
+table
+{
+    border-bottom: 0.5px solid grey;
+}
+
+thead
+{
+    background-color:#d8e0ea;
+
+}
+th
+{
+    border-right: 1px solid grey;
+    font-size: 16px;
+    color: #000000;
+    font-weight: 600;
+}
+tr
+{
+    border-bottom: 1px solid gray;
+}
+td{
+    border-right: 1px solid grey;
+    color: #000000;
+    font-weight: 600;
+}
+.thh
+{
+    border-bottom: 1px solid grey;
+}
+/* tr:hover
+{
+    background-color: #d9ebff;
+}
+a:hover
+
+{
+    background-color: #d9ebff;
+} */
+
+
+.test:after {
+    content: '\2026';
+    font-size: 15px;
+    }
+
+    .modal-content
+    {
+        width: 160px;
+
+    }
+.dropdown-menu{
+    right: 0px !important;
+    margin: 0px 0px 0px 0px !important;
+    left: auto !important;
+        
+}
+
+#search
+{
+    width: 200px;
+    height: 44px;
+    margin-top:8px;
+
+}
+.btnAction
+{
+    width: 45px;
+}
+.btnAddnew
+{   margin-left: 20px;
+    padding: 1px;
+    margin-top: 25px;
+    width: 120px;
+    height: 45px;
+    background-color: #76afe8;
+}
+.btnFilter
+{
+    padding: 1px;
+    margin-top: 40px;
+    width: 80px;
+    height: 30px;
+    background-color: #77ace0;
+    border-radius: 5px;
+    color:white;
+    margin-left: 5px;
+    font-family: 'Avenir Next LT Pro Regular' !important;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+thead
+{
+    background-color:#d8e0ea;
+
+}
+th
+{
+    border-right: 1px solid grey;
+    
+}
+td{
+    border-right: 1px solid grey;
+}
+.thh
+{
+    border-bottom: 1px solid grey;
+}
+/* tr:hover
+{
+    background-color: #d9ebff;
+}
+a:hover
+
+{
+    background-color: #d9ebff;
+} */
+.card
+{
+    margin-top:70px;
+    margin-left: 10px;
+    height: 700px;
+    overflow: hidden;
+}
+.card-body
+{
+     margin-bottom: 0px;
+     margin-top:-34px;
+     overflow: scroll;
+}
+.pagination.pg-purple .page-item.active .page-link{
+    background-color: #76afe8 !important;
+}
+.test:after {
+    content: '\2026';
+    font-size: 15px;
+    }
+
+    .modal-content
+    {
+        width: 160px;
+
+    }
+.dropdown-menu{
+    right: 0px !important;
+    margin: 0px 0px 0px 0px !important;
+    left: auto !important;
+        
+}
+
+#search
+{
+    width: 200px;
+    height: 44px;
+    margin-top:8px;
+
+}
+.btnAction
+{
+    width: 45px;
+}
+.btn1
+{
+  background-color:#0b7ae8;
+}
+ 
+.btncls
+{
+    margin-left:0px;
+}
+
+.btnFilterFlg
+{
+    padding: 1px;
+    margin-top: 40px;
+    width: 122px;
+    height: 30px;
+    background-color: #77ace0;
+    border-radius: 5px;
+    color:white;
+    margin-left: 5px;
+    font-size: 14px;
+}
+.btnSearch
+{
+    padding: 1px;
+    margin-top: 40px;
+    width: 30px;
+    height: 30px;
+    background-color: #77ace0;
+    border-radius: 5px;
+    color:white;
+    margin-left: 5px;
+    font-size: 14px;
+   
+}
+#search
+{
+    height:30px;
+    margin-top:40px;
+    margin-left:20px;
+}
+.modal-dialog
+{
+    width: 35%;
+    position: absolute;
+    top: 1px;left: 30%;
+}
+.modal-header{
+    background-color:#0b7ae8;
+    display: block;
+}
+.modal-content {
+    overflow:hidden;
+    width: 95%;
+    height: 560px;
+    color: white;
+}
+
+@media screen and (max-width: 1100px)
+{   
+     .smscreen
+    {
+        margin-top: 0px;
+    }
+
+     #search
+    {
+        margin-top: 0px;
+    }
+    .btnSearch
+    {
+        margin-top: 0px;
+    }  
+    .card
+    {
+        height: 550px;
+    }
+    .modal-dialog {
+    -webkit-transform: translate(0,-50%);
+    -o-transform: translate(0,-50%);
+    transform: translate(0,-50%);
+    top: 20%;
+    margin: 0 auto;
+    width: 35%;
+    position: absolute;
+    top: 300px;
+    left: 10%;
+} 
+.modal-content {
+    overflow:hidden;
+    width: 200%;
+    height: 500px;
+} 
+}
+@media only screen and (width : 360px) and (height: 640px) 
+{
+    .smScrn
+    {
+        margin-top: 0px;
+    }
+
+}
+@media only screen and (width : 320px) and (height: 568px) 
+{
+    .smScrn
+    {
+        margin-top: 0px;
+    }
+    .card
+    {
+        height: 520px;
+    }
+
+}
+
+ @media only screen and (width : 1024px) and (height: 662px) 
+{
+    .card
+    {
+        height: 550px;
+    }
+    .smscreen
+    {
+        margin-top: 40px;
+    }
+
+}
+/* @media only screen and (width : 1360px) and (height: 662px) 
+{
+    .card
+    {
+        height: 550px;
+    }
+
+}  */

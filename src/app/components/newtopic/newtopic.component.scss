@@ -1,0 +1,84 @@
+.modal-notify .modal-header {
+    border-radius: 3px 3px 0 0;
+}
+.modal-notify .modal-content {
+    border-radius: 3px;    
+//    width: 550px;
+}
+
+.modal-title{
+    color: white !important; 
+    text-align: center;
+
+}
+
+.wh{
+    font-size: 17px;
+    color: white !important;
+    font-style: normal !important;
+    font-family: 'Avenir Next LT Pro Regular' !important;
+    font-weight: 200;
+}
+.textarea{
+    width: 355px;
+    height: 30px;
+    border: 1px solid rgb(150, 149, 149);
+}
+.textarea1{
+    width: 355px;
+    height: 150px;
+    border: 1px solid rgb(150, 149, 149);
+}
+.modal-dialog {
+    // height: 80% !important;
+    padding-top:5%;
+    
+  }
+  
+  .modal-content {
+    // height: 100% !important;
+    overflow:visible;
+  }
+  
+  .modal-body {
+    // height: 80%;
+    overflow: auto;   
+  }
+  .btn1 {
+    padding: 5px 10px;
+    // font-size: 20px;
+    border-radius: 5px;
+    width:89%;
+    color: white !important;   
+}
+.btn2 {
+    padding: 8px 12px;  
+    border-radius: 5px;
+    width:30%;
+    color: white !important;   
+}
+.flexbox{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+.md-form{
+    margin-top: 0px;
+}
+
+.whx{
+    font-size: 30px;
+    font-family: 'Avenir Next LT Pro Regular' !important;
+    color: white;
+    font-weight: 200;
+    padding-left: 8px !important;
+}
+
+.counter-danger{
+    border: 1px solid #969595 !important;
+    box-shadow: none !important;
+}
+
+.text-danger{
+    visibility: hidden !important;
+}

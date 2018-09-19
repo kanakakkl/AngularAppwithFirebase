@@ -1,0 +1,162 @@
+
+<div class="card">
+    <div class="card-body">
+      <ngx-spinner bdColor="rgba(51, 51, 51, 0.8)" size="medium" color="#77ace0" type="line-spin-clockwise-fade"></ngx-spinner>
+      <!-- Grid row -->
+      <div [ngStyle]=" {'opacity': postSampleIsOpen ? '0.4' : '1','pointer-events': postSampleIsOpen ? 'none' : 'auto'}" class="row btncls">
+  
+       
+        <button type="button" class=" btnFilter" mdbWavesEffect>Date<span style="padding-left:5px"><i class="fa fa-calendar" aria-hidden="true"></i></span></button>
+        <button type="button" class=" btnFilter" mdbWavesEffect>State</button>
+        <button type="button" class=" btnFilter" mdbWavesEffect>Country</button>
+        <button type="button" class=" btnFilter smScrn" mdbWavesEffect>Phone</button>
+        <button type="button" class=" btnFilter smscreen" mdbWavesEffect>Email ID</button>
+        <button type="button" class=" btnFilter smscreen" mdbWavesEffect>First Name</button>
+        <button type="button" class=" btnFilter smscreen" mdbWavesEffect>Last Name</button>
+        <button type="button" class=" btnFilter smscreen" mdbWavesEffect>Category</button>
+        <button type="button" class=" btnFilter smscreen" mdbWavesEffect>Topic</button>
+        <button type="button" class=" btnFilterFlg smscreen" mdbWavesEffect>Flagged Posts</button>
+        <button type="button" class=" btnFilterFlg smscreen" mdbWavesEffect>Flagged Category</button>
+        <input  type="search" id="search" placeholder="Start Searching..." 
+        [(ngModel)]="searchText" id="search" class="form-control" mdbInputDirective [mdbValidate]="false">
+        <button type="button" class="btnSearch" mdbWavesEffect><i class="fa fa-search" aria-hidden="true"></i></button>
+            <!-- <label for="search">Search data</label> -->
+
+      </div>
+      <!-- Grid row -->
+  
+      <!--Table-->
+      <table [ngStyle]=" {'opacity': postSampleIsOpen  ? '0.4' : '1','pointer-events': postSampleIsOpen  ? 'none' : 'auto'}"  class="table">
+  
+        <!--Table head-->
+        <thead>
+          <tr>
+            <th class="thh">Post ID</th>
+            <th class="thh">First Name</th>
+            <th class="thh">Last Name</th>
+            <th class="thh">Phone</th>
+            <th class="thh">Email ID</th>
+            <th class="thh">State</th>
+            <th class="thh">City</th>
+            <th class="thh">Country</th>
+            <th class="thh">Flagged status</th>
+            <th class="thh">Flagged Category</th>
+            <th class="thh">Post Flag</th>
+            <th class="thh">Category</th>
+            <th class="thh">Topic</th>
+            <th class="thh">Created Time</th>
+            <th class="thh">Updated Time</th>
+            <th class="thh">Actions</th>
+          </tr>
+        </thead>
+        <!--Table head-->
+  
+        <!--Table body-->
+        <tbody>
+          <tr *ngFor="let data of search(),let i=index" (click)="setClickedRow(i)" [class.active]="i == selectedRow">
+          <td class="thdata"  *ngIf="i >= firstVisibleIndex && i <= lastVisibleIndex" scope="row">Post{{i+1}}</td>
+            <td  *ngIf="i >= firstVisibleIndex && i <= lastVisibleIndex">{{data.FirstName}}</td>
+            <td  *ngIf="i >= firstVisibleIndex && i <= lastVisibleIndex">{{data.LastName}}</td>
+            <td  *ngIf="i >= firstVisibleIndex && i <= lastVisibleIndex">{{data.Phone}}</td>
+            <td  *ngIf="i >= firstVisibleIndex && i <= lastVisibleIndex">{{data.Email}}</td>
+            <td  *ngIf="i >= firstVisibleIndex && i <= lastVisibleIndex">{{data.Address[3].value}}</td>
+            <td  *ngIf="i >= firstVisibleIndex && i <= lastVisibleIndex">{{data.Address[0].value}}</td>
+            <td  *ngIf="i >= firstVisibleIndex && i <= lastVisibleIndex">{{data.Address[1].value}}</td>
+            <td  *ngIf="i >= firstVisibleIndex && i <= lastVisibleIndex">{{data.flagstatus}}</td>
+            <td  *ngIf="i >= firstVisibleIndex && i <= lastVisibleIndex">{{data.flagcat}}</td>
+            <!-- <td>{{data.postflag}}</td> -->
+            <td *ngIf="data.PostStatus == 'Block' && i >= firstVisibleIndex && i <= lastVisibleIndex"><img src="assets/img/flag.png" width="25px" height="25px"></td>
+            <td *ngIf="data.PostStatus != 'Block' && i >= firstVisibleIndex && i <= lastVisibleIndex"></td>
+            <td *ngIf="i >= firstVisibleIndex && i <= lastVisibleIndex">{{data.CategoryName}}</td>
+            <td *ngIf="i >= firstVisibleIndex && i <= lastVisibleIndex">{{data.TopicTitle}}</td>
+            <td *ngIf="i >= firstVisibleIndex && i <= lastVisibleIndex">{{data.CreateTime * 1000 | date: 'M/d/yy, h:mm a'}}</td>
+            <td *ngIf="i >= firstVisibleIndex && i <= lastVisibleIndex">{{data.ModifyTime * 1000 | date: 'M/d/yy, h:mm a' }}</td>
+            
+            <td *ngIf="i >= firstVisibleIndex && i <= lastVisibleIndex">
+              <div class="btn-group" mdbDropdown>
+                <button class="btnAction" mdbDropdownToggle type="button" mdbWavesEffect>
+                  <div class="test"></div>
+                </button>
+              
+                <div class="dropdown-menu dropdown-primary">
+                  <a (click)="actionClick(action.value,data)" *ngFor="let action of actions" class="dropdown-item" [value]="action.value">
+                    {{action.viewValue}}
+                  </a>
+                </div>
+              </div>
+            </td>
+          
+          </tr>
+        </tbody>
+        <!--Table body-->
+      </table>
+      <!--Table-->
+
+      <div role="dialog" [ngStyle]=" {'display': postSampleIsOpen ? 'block' : 'none','opacity': 1,'width':'35%','margin-top':'-90%','margin-left':'35%'}">
+        <div class="modal-dialog modal-lg ">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 style="text-align:center">Posts</h4>
+            </div>
+            <div [ngStyle]=" {'background-color' : viewColor ? 'lightgray' : 'transparent'}" class="modal-body">
+             <app-post-upgrade-modal *ngIf=isPostModelActive [postdataKey]="postdataKey" [pstData]="catPostListArray"></app-post-upgrade-modal>
+            </div>
+            <div class="modal-footer" floatright>
+              <button style="padding-left:20px !important;padding-right:20px !important" type="button" id="btnClose" class="btn btn1" (click)="openPostModal(false)">
+                Cancel </button>
+              <button type="button" id="btnClose" class="btn btn1" (click)="updatepostInfo(catPostListArray)" [ngStyle]=" {'display': editSelect ? 'block' : 'none'}">Submit</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--Bottom Table UI-->
+     <div class="d-flex justify-content-center">
+
+      <!--Pagination -->
+      <nav class="my-4 pt-2">
+        <ul class="pagination pagination-circle pg-purple mb-0">
+
+          <!--First-->
+          <li class="page-item clearfix d-none d-md-block" (click)="firstPage()" [ngClass]="{disabled: activePage == 1}">
+            <a class="page-link">First</a>
+          </li>
+
+          <!--Arrow left-->
+          <li class="page-item" (click)="previousPage($event)" [ngClass]="{disabled: activePage == 1}">
+            <a class="page-link" aria-label="Previous">
+              <span aria-hidden="true">&laquo;</span>
+              <span class="sr-only">Previous</span>
+            </a>
+          </li>
+
+          <!--Numbers-->
+          <li #pages *ngFor="let page of paginators | slice:firstVisiblePaginator:lastVisiblePaginator; let i = index" class="page-item"
+            [ngClass]="{active: i + firstVisiblePaginator + 1 == activePage}">
+            <a class="page-link waves-light" (click)="changePage($event)" mdbWavesEffect>{{page}}</a>
+          </li>
+
+
+
+          <!--Arrow right-->
+          <li class="page-item" (click)="nextPage($event)" [ngClass]="{disabled: activePage == numberOfPaginators}">
+            <a class="page-link" aria-label="Next">
+              <span aria-hidden="true">&raquo;</span>
+              <span class="sr-only">Next</span>
+            </a>
+          </li>
+
+          <!--First-->
+          <li class="page-item clearfix d-none d-md-block" (click)="lastPage()" [ngClass]="{disabled: activePage == numberOfPaginators}">
+            <a class="page-link">Last</a>
+          </li>
+
+        </ul>
+      </nav>
+      <!--/Pagination -->
+
+    </div>
+    <!--Bottom Table UI-->
+     
+   </div>
+  </div>
