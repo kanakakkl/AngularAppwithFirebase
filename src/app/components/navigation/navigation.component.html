@@ -1,0 +1,67 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-toolbar style="
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  z-index: 999;
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,0.24);">
+    <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()" *ngIf="isHandset$ | async">
+      <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+    </button>
+    <div class="navbar-brand">
+      <img height="50px" width="100px" src="assets/img/gray_black_logo.jpg">
+    </div>
+    <span flex style="flex-grow:2;"></span>
+    <div>
+      <img src="assets/img/bell_img.png" alt="bell" width="30px" height="22px">&nbsp;
+      <ng-template #popTemplate> <div [innerHtml]="html"  (click)="doLogOut()"></div></ng-template>       
+      <button style="padding:0px; border-radius:52%; border: 1px solid #d0d0d0;" id = "popTemplate" type="button" mdbBtn color="default" class="waves-light"   [mdbPopover]="popTemplate" 
+        placement="bottom" mdbWavesEffect>
+        <img  style="height:39px; width:2.56em;" src="assets/img/memplaceholder.png" alt="memPlaceholder">
+      </button>
+
+    </div>
+  </mat-toolbar>
+  <mat-sidenav style="height:100%; margin-top: 60px;" #drawer class="sidenav" fixedInViewport="true" [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="!(isHandset$ | async)">
+
+    <mat-nav-list>
+      <a mat-list-item  [ngClass]="{active: isActive('/dashboard')}" *ngIf="isStrategicAccess" routerLink="/dashboard">
+        <i style="width: 20px; height: 20px; font-weight: 700; font-size: 19px;" class="fa fa-trello" aria-hidden="true"></i>
+        <span class="mat-list-text">&nbsp; Dashboard</span></a>
+      <a mat-list-item [ngClass]="{active: isActive('/voicofthepeople2018/admin')}" *ngIf="isAccess" routerLink="/voicofthepeople2018/admin">
+        <i style="width: 20px; height: 20px; font-weight: 700; font-size: 19px;" class="fa fa-user-plus" aria-hidden="true"></i>
+        <span class="mat-list-text">&nbsp; Admin User Creation</span></a>
+      <a mat-list-item [ngClass]="{active: isActive('/user')}" *ngIf="isUserAccess" routerLink="/user">
+        <i style="width: 20px; height: 20px; font-weight: 700; font-size: 19px;" class="fa fa-user-o" aria-hidden="true"></i>
+        <span class="mat-list-text">  &nbsp; User  </span>
+      </a>
+      <a mat-list-item [ngClass]="{active: isActive('/campaignuser')}" *ngIf="isUserAccess" routerLink="/campaignuser">
+        <i style="width: 20px; height: 20px; font-weight: 700; font-size: 19px;" class="fa fa-server" aria-hidden="true"></i>
+        <span class="mat-list-text">&nbsp; Campaign Users</span></a>
+      <a mat-list-item  [ngClass]="{active: isActive('/userposts')}" *ngIf="isUserPostAccess" routerLink="/userposts">
+        <i style="width: 20px; height: 20px; font-weight: 700; font-size: 19px;" class="fa fa-envelope-o" aria-hidden="true"></i>
+        <span class="mat-list-text">&nbsp; User Posts</span></a>
+      <a mat-list-item [ngClass]="{active: isActive('/categories')}" *ngIf="isAccess" routerLink="/categories">
+        <i style="width: 20px; height: 20px; font-weight: 700; font-size: 19px;" class="fa fa-sitemap" aria-hidden="true"></i>
+        <span class="mat-list-text">&nbsp; Create Categories</span></a>
+      <a mat-list-item [ngClass]="{active: isActive('/backgroundjobs')}" *ngIf="isAccess" routerLink="/backgroundjobs">
+        <i style="width: 20px; height: 20px; font-weight: 700; font-size: 19px;" class="fa fa-handshake-o" aria-hidden="true"></i>
+        <span class="mat-list-text">&nbsp; Background Jobs</span> </a>
+      <a mat-list-item [ngClass]="{active: isActive('/durations')}" *ngIf="isAccess" routerLink="/durations">
+        <i style="width: 20px; height: 20px; font-weight: 700; font-size: 19px;" class="fa fa-calendar-check-o" aria-hidden="true"></i>
+        <span class="mat-list-text">&nbsp; Duration(Checkpoints)</span> </a>
+      <a mat-list-item [ngClass]="{active: isActive('/managementreports')}" *ngIf="isStrategicAccess" routerLink="/managementreports">
+        <i style="width: 20px; height: 20px; font-weight: 700; font-size: 19px;" class="fa fa-wpforms" aria-hidden="true"></i>
+        <span class="mat-list-text">&nbsp; Management Reports</span></a>
+        <a mat-list-item [ngClass]="{active: isActive('/generalsettings')}" *ngIf="isStrategicAccess" routerLink="/generalsettings">
+          <i style="width: 20px; height: 20px; font-weight: 700; font-size: 19px;" class="fa fa-cogs" aria-hidden="true"></i>
+          <span class="mat-list-text">&nbsp; General Settings</span></a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <md-content>
+    <router-outlet></router-outlet>
+  </md-content>
+</mat-sidenav-container>

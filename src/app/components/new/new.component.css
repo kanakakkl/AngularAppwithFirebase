@@ -1,0 +1,59 @@
+
+/* ::ng-deep .countruCls .input-group{
+
+    width: 99% !important;
+    height: 37px !important;
+    
+}
+::ng-deep .countruCls .input-group .dropbtn{
+    height: 37px;
+    margin-top: 0px;
+} */
+
+::ng-deep .countrypls .input-group{
+
+    width: 99% !important;
+    height: 37px !important;
+    
+}
+::ng-deep .countrypls .input-group .dropbtn{
+    height: 37px;
+    margin-top: 0px;
+}
+
+
+int-phone-prefix.countruCls.ng-untouched.ng-pristine.ng-invalid:before {
+    content: "phone number";
+    position: absolute;
+    left: 155px;
+    top: 145px;
+    color: #787878;
+    z-index: 10; 
+   
+}
+
+.test{
+    content: none !important;
+}
+
+@media screen and (max-width: 768px)
+{
+    int-phone-prefix.countruCls.ng-untouched.ng-pristine.ng-invalid:before {
+        content: "phone";
+        position: absolute;
+        left: 155px;
+        top: 145px;
+        color: #787878;
+        z-index: 10; 
+       
+    }
+}
+
+/* #plhol::-webkit-input-placeholder{
+    color:red;
+} */
+/* 
+#plhol::-webkit-input-placeholder::before {
+    
+    content:"Phone Number";
+} */

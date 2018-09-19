@@ -1,0 +1,80 @@
+
+.example-icon {
+  padding: 0 14px;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.wrapper {
+   position: relative; 
+  }
+
+.search-cls{
+  margin: 0;
+  padding-left: 33px;
+  font-family: 'Avenir Next LT Pro Regular' !important;
+  font-size: 16px !important;
+  line-height: inherit;
+  width: 250px;
+  border-radius: 2px;
+  border: 1px solid grey;
+}
+
+.search-icon-cls{
+  position: absolute;
+  top: 6px;
+  left: 11px;
+}
+
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 224px;
+  margin-top: 65px !important;
+  top: 0.7% !important;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  font-family: 'Avenir Next LT Pro Regular' !important;
+}
+
+.mat-list-item {
+    font-size: 15px !important;
+    font-weight: bolder;
+    font-family: 'Avenir Next LT Pro Regular' !important;
+    height: 48px !important;
+}
+
+.mat-drawer-container {
+  background-color: rgb(232, 232, 232) !important;
+  color: rgba(0,0,0,.87);
+}
+
+.mat-toolbar {
+  background: #fff !important;
+  color: rgba(0,0,0,.87);
+}
+
+button:focus {
+  outline: none !important;
+}
+
+::ng-deep .popover-body  a{
+  color: #212529 !important;
+  font-family: 'Avenir Next LT Pro Regular' !important;
+}
+
+.mat-list-item.mat-list-item-focus{
+  color:#77ace0 !important;
+}
+
+.active {
+  color:#77ace0 !important;
+}
+
