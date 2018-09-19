@@ -1,0 +1,8 @@
+
+<div *ngIf="isLoggedIn && isLoggedIn != undefined" class="sidebar" data-background-color="white" data-active-color="danger">
+        <app-navigation></app-navigation>
+    </div>
+<div *ngIf="!isLoggedIn && isLoggedIn != undefined" class="loginPage-cls"><app-login-page></app-login-page></div>
+<div *ngIf= "isInitial && isLoggedIn == undefined"><app-voicx-slash></app-voicx-slash></div>
+
+    
